@@ -7,6 +7,8 @@ function displayParkInfo(inpt) {
 
     console.log(inpt.data.length)
     $('body').html(`
+        <button>Search Again</button>
+
         <div>
             
         </div>
@@ -23,6 +25,14 @@ function displayParkInfo(inpt) {
             
         `)
     }
+
+    $('body').append(`
+        <button>Search Again</button>
+    `)
+    
+    $('button').click(function(e){
+        renderLanding();
+    })
 }
 
 function getParkInfo(state, maxresults) {
@@ -59,7 +69,7 @@ function renderLanding() {
             <input type="text" name="stateinput" id="" class = "stateinput"></input>
 
             <label for="maxresults">Max Results</label>
-            <input type="text" name="maxresults" id="" class = "maxresults"></input>
+            <input type="text" name="maxresults" id="" class = "maxresults" value="10"></input>
             
             <button type="submit">Show me the parks</button>
 
